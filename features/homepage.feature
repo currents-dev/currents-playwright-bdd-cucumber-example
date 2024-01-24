@@ -13,4 +13,4 @@ Feature: Playwright Home Page
     Examples:
         | link          | title        |
         | Get started   | Installation |    
-        | API reference | Library      |    
+        | API reference | Oh no!       |    

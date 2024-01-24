@@ -1,44 +1,76 @@
-# playwright-bdd-example
+# Playwright + Currents + playwright-bdd (Cucumber)
 
-Example project that uses [playwright-bdd](https://github.com/vitalets/playwright-bdd) to run BDD tests.
+This repository showcases running [Playwright](https://playwright.dev) + [Currents](https://currents.dev) + [playwright-bdd](https://github.com/vitalets/playwright-bdd) to run BDD tests, while using [Currents](https://currents.dev) as the reporting dashboard.
 
-## How to run it locally
+<p align="center">
+  <img width="830" src="https://static.currents.dev/currents-playwright-banner-gh.png" />
+</p>
 
-1. Clone repo
-   ```
-   git clone https://github.com/vitalets/playwright-bdd-example.git
-   ```
+## Why?
 
-2. CD into directory
-   ```
-   cd playwright-bdd-example
-   ```
+`cucumber-js` is a mature and popular test runner, however, it is different from the native Playwright test runner - those are not compatible. To utilize the native Playwright test runner with BDD it is suggested to use [playwright-bdd](https://github.com/vitalets/playwright-bdd).
 
-2. Install dependencies
-   ```
-   npm install
-   ```
+Read more at: https://www.cy2pw.com/cucumber.
 
-3. Install browsers
-   ```
-   npx playwright install
-   ```
+## Documentation
 
-4. Run tests
-   ```
-   npm test
-   ```
-   Output:
-   ```
-   Running 2 tests using 1 worker
-   2 passed (2.3s)
-   ```
+The repo contains a few BDD tests with one test that always fails (intentionally):
 
-5. Check out the report
-   ```
-   npm run report
-   ```
-   <details>
-     <summary>Report</summary>
-     <img src="https://github.com/vitalets/playwright-bdd/assets/1473072/4e2e4803-118a-40bd-a583-7dbe93b9ffd2"/>
-   </details>
+- [features/homepage.feature](features/homepage.feature) - has intentionally failing test
+- [features/todopage.feature](features/todopage.feature)
+
+To reproduce the setup:
+
+- Create an organization, get your **Record Key** and **Project Id** at https://app.currents.dev
+
+- Clone repo
+- Install dependencies
+
+  ```sh
+  npm install
+  ```
+
+- Install browsers
+
+  ```sh
+  npx playwright install
+  ```
+
+- Set **Record Key** and **Project Id** in `playwright.config.ts`
+
+- Run tests
+
+  ```sh
+  npm test
+  ```
+
+  Output:
+
+  ```plain
+   ===============================================
+   Uploading results to Currents.dev...
+   Cloud Run Finished: https://app.currents.dev/run/1f2e431c6d46675e
+   ================================================
+  ```
+
+Additional resources:
+
+- Playwright Features on Currents: https://currents.dev/playwright
+- Integration Documentation: https://currents.dev/readme/integration-with-playwright/currents-playwright
+- CI Build ID Guide: https://currents.dev/readme/guides/ci-build-id
+
+## Results
+
+The results are being reported to Currents for more efficient troubleshooting, and monitoring test suite flakiness and performance.
+
+Currents will collect the following information:
+
+- console output
+- screenshots
+- videos
+- trace files
+- timing
+- outcomes
+- flaky tests
+- error details
+- tags for more convenient management of the tests
