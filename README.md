@@ -73,4 +73,11 @@ Currents will collect the following information:
 - outcomes
 - flaky tests
 - error details
-- tags for more convenient management of the tests
+- tags for more convenient management of the tests:
+
+![currents-2024-01-24-15 26 34@2x](https://github.com/currents-dev/currents-playwright-bdd-cucumber-example/assets/1637928/44e38f3c-56f4-469e-884e-71a528ee4dca)
+
+![currents-2024-01-24-15 29 19@2x](https://github.com/currents-dev/currents-playwright-bdd-cucumber-example/assets/1637928/4ac06f8b-ff38-4f88-8ca0-b3d147d9dd96)
+
+
+- 
